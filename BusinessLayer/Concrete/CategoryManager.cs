@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstarct;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -13,37 +14,46 @@ namespace BusinessLayer.Concrete
     public class CategoryManager : ICategoryService
     {
         //CategoryRepositoryden değer oluşturmak için:
-        EFCategoryRepository efCategoryRepository;
+        //EFCategoryRepository efCategoryRepository;
         //Categorymanager sınıfı üzerinden atama yapabilmemiz için constructer method oluşturmamız gerekir:
-        public CategoryManager()
+
+
+        //public CategoryManager()
+        //{
+        //    //yapıcı method içinde newleme işlemi:
+        //    efCategoryRepository = new EFCategoryRepository();
+        //}
+
+        ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            //yapıcı method içinde newleme işlemi:
-            efCategoryRepository = new EFCategoryRepository();
+            _categoryDal = categoryDal;
         }
+
         public void CategoryAdd(Category category)
         {
 
-            efCategoryRepository.Insert(category);
+            _categoryDal.Insert(category);
         }
 
         public void CategoryDleete(Category category)
         {
-            efCategoryRepository.Delete(category);
+            _categoryDal.Delete(category);
         }
 
         public void CategoryUpdate(Category category)
         {
-            efCategoryRepository.Update(category);
+            _categoryDal.Update(category);
         }
 
         public Category GetById(int id)
         {
-            return efCategoryRepository.GetByID(id);
+            return _categoryDal.GetByID(id);
         }
 
         public List<Category> GetList()
         {
-            return efCategoryRepository.GetListAll();
+            return _categoryDal.GetListAll();
         }
     }
 }
