@@ -9,6 +9,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface IBlogDal:IGenericDal<Blog>
     {
+        //GenericRepositorye ek olarak sadece ilgili entitye ait olan methodları burada tanımlarız
+        List<Blog> GetListWithCategory();
        
     }
 }
