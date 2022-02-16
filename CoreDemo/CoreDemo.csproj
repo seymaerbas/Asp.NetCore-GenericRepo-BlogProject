@@ -5,6 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\web\js\bootstrap.js" />
+    <None Include="wwwroot\web\js\easing.js" />
+    <None Include="wwwroot\web\js\jquery-2.2.3.min.js" />
+    <None Include="wwwroot\web\js\jquery.desoslide.js" />
+    <None Include="wwwroot\web\js\jquery.flexisel.js" />
+    <None Include="wwwroot\web\js\modernizr.custom.min.js" />
+    <None Include="wwwroot\web\js\move-top.js" />
+    <None Include="wwwroot\web\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\web\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\web\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\web\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\web\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\web\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>
